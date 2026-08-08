@@ -45,10 +45,76 @@ img{
     object-fit:cover;
 }
 
+.restaurant-btn{
+    position:fixed;
+    right:22px;
+    bottom:80px;
+
+    width:42px;
+    height:42px;
+
+    border-radius:50%;
+    background:rgba(255,255,255,0.25);
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+    border:1px solid rgba(255,255,255,.2);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-decoration:none;
+    font-size:20px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.25);
+
+    opacity:0;
+    pointer-events:none;
+
+    transform:translateY(15px);
+
+    transition:.25s ease;
+}
+
+.restaurant-btn.show{
+    opacity:1;
+    pointer-events:auto;
+    transform:translateY(0);
+}
+    
 </style>
 
 </head>
 
+<script>
+
+const logo = document.querySelector(".wellgrow-logo");
+const restaurantBtn = document.getElementById("restaurantBtn");
+
+let menuOpen = false;
+
+logo.addEventListener("click", function(e){
+
+    e.preventDefault();
+
+    menuOpen = !menuOpen;
+
+    if(menuOpen){
+
+        logo.style.transform="rotate(180deg)";
+        restaurantBtn.classList.add("show");
+
+    }else{
+
+        logo.style.transform="rotate(0deg)";
+        restaurantBtn.classList.remove("show");
+
+    }
+
+});
+
+</script>
+    
 <body>
 
 <img src="1.png" alt="">
@@ -66,6 +132,12 @@ img{
 <img src="13.png" alt="">
 <img src="14.png" alt="">
 
+<a href="https://wellgrowcoffeekitchen-menu.github.io/wellgrow-baleendah-menu/"
+   class="restaurant-btn"
+   id="restaurantBtn">
+   ☕
+</a>
+    
 <!-- Logo Wellgrow -->
 
 <a href="https://www.instagram.com/wellgrow.coffee"
