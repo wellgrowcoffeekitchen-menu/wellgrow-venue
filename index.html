@@ -141,7 +141,44 @@ img{
     transform:translateY(0);
 }
 
+.top-btn{
+    position:fixed;
+    right:22px;
+    bottom:280px;
 
+    width:42px;
+    height:42px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,0.25);
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+
+    border:1px solid rgba(255,255,255,.2);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-decoration:none;
+    font-size:20px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.25);
+
+    opacity:0;
+    pointer-events:none;
+
+    transform:translateY(15px);
+
+    transition:.25s ease;
+}
+
+.top-btn.show{
+    opacity:1;
+    pointer-events:auto;
+    transform:translateY(0);
+}
 
     
     .maps-btn{
@@ -276,7 +313,15 @@ img{
     💬
 
 </a>
-    
+
+    <a href="#"
+   class="top-btn"
+   id="topBtn"
+   onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
+
+    ⬆
+
+</a>
 
 <!-- =========================
      LOGO WELLGROW
@@ -299,6 +344,7 @@ const restaurantBtn = document.getElementById("restaurantBtn");
 const mapsBtn = document.getElementById("mapsBtn");
 const instagramBtn = document.getElementById("instagramBtn");
 const whatsappBtn = document.getElementById("whatsappBtn");
+const topBtn = document.getElementById("topBtn");
 
 let menuOpen = false;
 
@@ -315,7 +361,8 @@ logo.addEventListener("click", function(e){
         mapsBtn.classList.add("show");
         instagramBtn.classList.add("show");
         whatsappBtn.classList.add("show");
-
+        topBtn.classList.add("show");
+        
     }else{
 
         logo.style.transform = "rotate(0deg)";
@@ -323,6 +370,7 @@ logo.addEventListener("click", function(e){
         mapsBtn.classList.remove("show");
         instagramBtn.classList.remove("show");
         whatsappBtn.classList.remove("show");
+        topBtn.classList.remove("show");
 
     }
 
