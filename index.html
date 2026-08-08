@@ -20,6 +20,31 @@ img{
     display:block;
 }
 
+/* Floating Wellgrow Logo */
+
+.wellgrow-logo{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,.25);
+    z-index:999;
+    transition:.25s ease;
+}
+
+.wellgrow-logo:hover{
+    transform:scale(1.06);
+}
+
+.wellgrow-logo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
 </style>
 
 </head>
@@ -40,6 +65,16 @@ img{
 <img src="12.png" alt="">
 <img src="13.png" alt="">
 <img src="14.png" alt="">
+
+<!-- Logo Wellgrow -->
+
+<a href="https://www.instagram.com/wellgrow.coffee"
+   target="_blank"
+   class="wellgrow-logo">
+
+    <img src="logo.png" alt="Wellgrow">
+
+</a>
 
 </body>
 </html>
