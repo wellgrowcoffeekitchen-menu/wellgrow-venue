@@ -102,6 +102,47 @@ img{
     transform:translateY(0);
 }
     
+.whatsapp-btn{
+    position:fixed;
+    right:22px;
+    bottom:230px;
+
+    width:42px;
+    height:42px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,0.25);
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+
+    border:1px solid rgba(255,255,255,.2);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-decoration:none;
+    font-size:20px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.25);
+
+    opacity:0;
+    pointer-events:none;
+
+    transform:translateY(15px);
+
+    transition:.25s ease;
+}
+
+.whatsapp-btn.show{
+    opacity:1;
+    pointer-events:auto;
+    transform:translateY(0);
+}
+
+
+
     
     .maps-btn{
     position:fixed;
@@ -227,7 +268,14 @@ img{
 
 </a>
 
-    
+    <a href="https://wa.me/6281212898383"
+   target="_blank"
+   class="whatsapp-btn"
+   id="whatsappBtn">
+
+    💬
+
+</a>
     
 
 <!-- =========================
@@ -250,6 +298,7 @@ const logo = document.getElementById("wellgrowLogo");
 const restaurantBtn = document.getElementById("restaurantBtn");
 const mapsBtn = document.getElementById("mapsBtn");
 const instagramBtn = document.getElementById("instagramBtn");
+const whatsappBtn = document.getElementById("whatsappBtn");
 
 let menuOpen = false;
 
@@ -265,6 +314,7 @@ logo.addEventListener("click", function(e){
         restaurantBtn.classList.add("show");
         mapsBtn.classList.add("show");
         instagramBtn.classList.add("show");
+        whatsappBtn.classList.add("show");
 
     }else{
 
@@ -272,6 +322,7 @@ logo.addEventListener("click", function(e){
         restaurantBtn.classList.remove("show");
         mapsBtn.classList.remove("show");
         instagramBtn.classList.remove("show");
+        whatsappBtn.classList.remove("show");
 
     }
 
